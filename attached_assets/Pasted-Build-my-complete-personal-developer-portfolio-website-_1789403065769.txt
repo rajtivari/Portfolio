@@ -1,0 +1,838 @@
+Build my complete personal developer portfolio website from scratch in this Replit project.
+
+IMPORTANT:
+This is NOT a generic portfolio template.
+
+I want a premium, cinematic, highly interactive developer portfolio that starts as a visual storytelling experience and then transitions into a professional developer portfolio.
+
+The first part of the website should feel like a cinematic journey through an airplane window, sky and clouds.
+
+The AI CORE is ONLY part of this cinematic intro sequence.
+
+DO NOT create a separate "AI Core" page or section later in the website.
+
+==================================================
+OVERALL WEBSITE FLOW
+==================================================
+
+The website should feel like one continuous experience:
+
+AIRPLANE WINDOW
+        ↓
+SKY
+        ↓
+CLOUDS
+        ↓
+MY DETAILS APPEAR INSIDE THE CLOUD EXPERIENCE
+        ↓
+ABOUT / IDENTITY INFORMATION
+        ↓
+AI CORE APPEARS AS THE FINAL CINEMATIC TRANSITION
+        ↓
+CINEMATIC INTRO ENDS
+        ↓
+MAIN DEVELOPER PORTFOLIO
+        ↓
+PROJECTS
+        ↓
+SKILLS
+        ↓
+CERTIFICATES
+        ↓
+EXPERIENCE / EDUCATION
+        ↓
+CONTACT
+
+IMPORTANT:
+
+The AI CORE must NOT appear as a standalone page.
+
+It should only appear briefly as part of the cinematic intro.
+
+After the AI Core transition finishes, the website should permanently transition into the main portfolio interface.
+
+==================================================
+VISUAL DESIGN DIRECTION
+==================================================
+
+Use the following visual identity for the entire website:
+
+DARK FUTURISTIC DEVELOPER HUD / CYBERPUNK INTERFACE
+
+Primary visual characteristics:
+
+- black / charcoal background
+- subtle dark gradients
+- restrained neon-green accents
+- futuristic HUD elements
+- terminal-inspired typography
+- thin technical borders
+- subtle grid patterns
+- glass / translucent panels
+- subtle glow
+- data readouts
+- scanning effects
+- technical labels
+- minimal futuristic icons
+- premium 3D elements
+- cinematic transitions
+- subtle particles
+
+The design should feel inspired by futuristic developer interfaces and cinematic technology environments.
+
+Do NOT copy any copyrighted game UI, logos, characters, fonts, assets, or branding.
+
+The website should remain professional enough for software developer internships and job applications.
+
+Avoid making it look like a childish gaming website.
+
+The visual style should be:
+
+PREMIUM + CINEMATIC + FUTURISTIC + PROFESSIONAL.
+
+==================================================
+ASSET REQUIREMENT
+==================================================
+
+I have provided animation assets for the cinematic intro.
+
+Inspect ALL uploaded assets before coding.
+
+There may be approximately 200+ original frames and an optimized WebP version.
+
+Use the optimized frames when available.
+
+DO NOT replace my animation with stock images.
+
+DO NOT generate fake replacement frames.
+
+DO NOT ignore the provided assets.
+
+Determine:
+
+- frame count
+- filename pattern
+- image dimensions
+- file format
+- correct frame order
+
+Use the actual frames to create the cinematic sequence.
+
+If the project contains a ZIP containing the frames, extract/use the frames appropriately.
+
+Optimize loading so the browser does not freeze.
+
+==================================================
+CINEMATIC INTRO
+==================================================
+
+The first screen should immediately feel cinematic.
+
+Create a full-screen airplane-window / sky experience.
+
+The animation should be controlled by scrolling.
+
+Scrolling DOWN:
+
+frame 1
+→ frame 2
+→ frame 3
+→ ...
+→ final frame
+
+Scrolling UP:
+
+reverse the animation smoothly.
+
+Do not simply autoplay the animation.
+
+The user's scroll position should determine the animation progress.
+
+Use:
+
+- requestAnimationFrame
+- canvas rendering if appropriate
+- efficient image preloading
+- progressive loading
+- frame caching
+- device-aware optimization
+
+The animation must feel extremely smooth.
+
+==================================================
+CINEMATIC SCROLL EFFECTS
+==================================================
+
+The cinematic section should not simply play images.
+
+Create depth and motion around the frames.
+
+As the visitor scrolls:
+
+- clouds move naturally
+- camera movement feels cinematic
+- subtle parallax occurs
+- HUD elements appear gradually
+- text fades in and out
+- information moves slightly with depth
+- particles may drift through the scene
+- subtle blur/depth effects can be used
+- transitions should be smooth
+
+Do NOT overuse effects.
+
+Everything should feel intentional.
+
+==================================================
+MY DETAILS INSIDE THE CLOUDS
+==================================================
+
+This is VERY IMPORTANT.
+
+While the user is scrolling through the sky/cloud portion, my personal information should appear INSIDE the cinematic environment.
+
+Do NOT put all information into one giant centered card.
+
+Instead, reveal different information at different points of the scroll.
+
+For example:
+
+PHASE 1:
+
+The airplane/sky is visible.
+
+A small HUD label appears:
+
+"IDENTITY DETECTED"
+
+Then:
+
+"RAJ TIVARI"
+
+with a short professional title.
+
+PHASE 2:
+
+As the clouds move:
+
+A piece of information appears on the RIGHT side.
+
+Example:
+
+"PROFILE"
+
+Software Developer
+Building modern web experiences,
+AI-powered applications and interactive products.
+
+PHASE 3:
+
+As scrolling continues:
+
+Another information block appears on the LEFT.
+
+Example:
+
+"MISSION"
+
+Build useful technology.
+Learn continuously.
+Solve real-world problems.
+
+PHASE 4:
+
+Continue alternating:
+
+RIGHT
+LEFT
+RIGHT
+LEFT
+
+Do not show everything simultaneously.
+
+The information should feel like the visitor is discovering my identity while travelling through the clouds.
+
+==================================================
+ABOUT INFORMATION
+==================================================
+
+Use actual information available in the project.
+
+If my information is missing, use clearly marked placeholders rather than inventing achievements.
+
+Potential information structure:
+
+RIGHT:
+
+IDENTITY
+
+RAJ TIVARI
+
+Software Developer
+
+LEFT:
+
+MISSION
+
+A concise professional introduction.
+
+RIGHT:
+
+FOCUS
+
+Web Development
+Artificial Intelligence
+Software Development
+Creative Technology
+
+LEFT:
+
+OBJECTIVE
+
+Looking for opportunities to learn, build useful products and contribute as a software developer.
+
+Keep the text short.
+
+The cinematic section is visual storytelling, NOT a wall of text.
+
+==================================================
+AI CORE — CINEMATIC TRANSITION ONLY
+==================================================
+
+At the end of the cloud/identity sequence, introduce the AI CORE.
+
+IMPORTANT:
+
+THIS IS NOT A SEPARATE PAGE.
+
+THIS IS NOT A SEPARATE PORTFOLIO SECTION.
+
+THIS IS ONLY A CINEMATIC TRANSITION.
+
+The AI Core should appear as the final moment of the intro.
+
+Visual concept:
+
+A futuristic glowing central AI core/orb.
+
+Around it:
+
+- rotating rings
+- particles
+- subtle green energy
+- HUD lines
+- technical data
+- scanning effects
+- small floating system indicators
+- subtle 3D depth
+
+Display:
+
+AI CORE
+SYSTEM ONLINE
+
+Then allow the core to visually transition into the main portfolio interface.
+
+For example:
+
+AI CORE
+      ↓
+SYSTEM INITIALIZATION
+      ↓
+PORTFOLIO SYSTEM ONLINE
+      ↓
+MAIN PORTFOLIO
+
+Once this transition is complete:
+
+REMOVE THE AI CORE.
+
+Do not keep an AI Core section on the page.
+
+Do not show the AI Core in the navigation.
+
+Do not create an AI Core card later.
+
+It exists ONLY during the cinematic introduction.
+
+==================================================
+TRANSITION TO MAIN PORTFOLIO
+==================================================
+
+After the AI Core transition, the cinematic sky experience should end naturally.
+
+The interface should transform into the main developer portfolio.
+
+The visual language should remain consistent:
+
+black / charcoal
++
+neon green
++
+HUD
++
+terminal
++
+3D
++
+technical data
+
+==================================================
+MAIN NAVIGATION
+==================================================
+
+Create a professional navigation system.
+
+Desktop:
+
+A futuristic left-side navigation panel.
+
+Navigation:
+
+01 HOME
+02 ABOUT
+03 PROJECTS
+04 SKILLS
+05 CERTIFICATES
+06 EXPERIENCE
+07 CONTACT
+
+IMPORTANT:
+
+There should NOT be an AI CORE navigation item.
+
+AI Core exists only in the cinematic intro.
+
+Navigation should indicate the current section.
+
+Use smooth scrolling.
+
+Mobile should use a compact futuristic menu.
+
+==================================================
+HOME
+==================================================
+
+After the cinematic intro, the Home interface should establish my developer identity.
+
+Show:
+
+RAJ TIVARI
+
+Software Developer
+
+A concise professional introduction.
+
+Include:
+
+VIEW PROJECTS
+CONTACT ME
+
+buttons.
+
+Add subtle HUD information around the hero.
+
+==================================================
+ABOUT
+==================================================
+
+Create a proper professional About section after the cinematic intro.
+
+This is different from the cinematic identity sequence.
+
+The cinematic intro gives a short visual introduction.
+
+The main About section can contain more detailed information.
+
+Use:
+
+- professional layout
+- timeline/data panels
+- subtle animations
+- readable typography
+
+==================================================
+PROJECTS
+==================================================
+
+Create a premium Projects section.
+
+Use actual projects from the repository if they exist.
+
+DO NOT invent projects.
+
+Each project should have:
+
+- project name
+- description
+- technologies
+- image/preview
+- GitHub link
+- live demo link when available
+
+Use futuristic cards with subtle 3D hover effects.
+
+Cards should remain easy for recruiters to understand.
+
+==================================================
+SKILLS
+==================================================
+
+Create a professional skills section.
+
+Organize technologies into categories.
+
+For example:
+
+LANGUAGES
+Python
+JavaScript
+C++
+etc.
+
+WEB
+HTML
+CSS
+React
+Node.js
+etc.
+
+AI / DATA
+AI
+Machine Learning
+etc.
+
+TOOLS
+Git
+GitHub
+GitLab
+VS Code
+etc.
+
+ONLY include technologies actually supported by my information/project.
+
+Do not invent expertise.
+
+==================================================
+CERTIFICATES
+==================================================
+
+Create a Certificates section.
+
+Use my actual certificate assets if they exist.
+
+Each certificate card should display:
+
+- certificate name
+- issuer
+- date
+- credential ID
+- View Certificate
+
+Use subtle hover animation.
+
+Make certificates visually impressive but professional.
+
+==================================================
+EXPERIENCE / EDUCATION
+==================================================
+
+Create a clean professional timeline.
+
+Use actual information available.
+
+Do NOT invent:
+
+- companies
+- internships
+- awards
+- degrees
+- positions
+- achievements
+
+==================================================
+CONTACT
+==================================================
+
+End with a strong contact section.
+
+Include actual links if available:
+
+Email
+GitHub
+LinkedIn
+Resume
+
+CTA:
+
+"LET'S BUILD SOMETHING"
+
+==================================================
+3D EFFECTS
+==================================================
+
+Use 3D effects carefully.
+
+Possible technologies:
+
+Three.js
+React Three Fiber
+GSAP
+Framer Motion
+
+Only introduce dependencies when they provide real value.
+
+Use 3D for:
+
+- cinematic AI Core
+- subtle hero depth
+- project hover effects
+- background particles
+- HUD depth
+
+Do not turn every section into a 3D scene.
+
+==================================================
+SCROLL EXPERIENCE
+==================================================
+
+Scrolling is the main interaction.
+
+The experience should feel continuous.
+
+Important sequence:
+
+1. User enters website.
+2. Airplane window/sky appears.
+3. Scroll controls frames.
+4. Clouds develop.
+5. Raj's information appears.
+6. Information alternates RIGHT → LEFT → RIGHT → LEFT.
+7. AI Core appears.
+8. AI Core transitions into "SYSTEM ONLINE".
+9. Cinematic intro ends.
+10. Main portfolio begins.
+11. User continues through Projects, Skills, Certificates, Experience and Contact.
+
+The transition between these stages must be smooth.
+
+==================================================
+RESPONSIVE DESIGN
+==================================================
+
+Make the website fully responsive.
+
+Desktop
+Laptop
+Tablet
+Android
+iPhone
+
+On mobile:
+
+- simplify HUD elements
+- reposition text
+- reduce particle count
+- optimize frame playback
+- maintain cinematic feel
+- ensure navigation works with touch
+- avoid excessive memory usage
+
+Do not simply shrink desktop layouts.
+
+==================================================
+PERFORMANCE
+==================================================
+
+This is extremely important because the cinematic intro uses many frames.
+
+Optimize:
+
+- frame loading
+- image memory
+- scrolling
+- animation rendering
+- mobile performance
+- initial page load
+
+Do not load every huge image into memory simultaneously if unnecessary.
+
+Use the optimized WebP frames.
+
+Use canvas rendering if it improves performance.
+
+Use requestAnimationFrame.
+
+Avoid unnecessary React re-renders.
+
+Clean up animation listeners and resources.
+
+==================================================
+ACCESSIBILITY
+==================================================
+
+Even though the site is highly visual:
+
+- maintain readable contrast
+- keyboard navigation
+- semantic HTML
+- accessible buttons
+- alt text for meaningful images
+- respect reduced-motion preferences where appropriate
+
+==================================================
+SEO
+==================================================
+
+Add:
+
+- proper title
+- meta description
+- Open Graph metadata
+- semantic headings
+- favicon
+- clean URLs
+
+Use:
+
+Raj Tivari — Software Developer
+
+where appropriate.
+
+==================================================
+CODE ARCHITECTURE
+==================================================
+
+Use a clean component structure.
+
+For example:
+
+src/
+  components/
+    CinematicIntro/
+    FrameAnimation/
+    HUD/
+    Navigation/
+    Hero/
+    About/
+    Projects/
+    Skills/
+    Certificates/
+    Experience/
+    Contact/
+
+Keep components modular.
+
+Do not put the entire website into one giant component.
+
+==================================================
+IMPORTANT DEVELOPMENT PROCESS
+==================================================
+
+FIRST:
+
+Inspect the entire existing project.
+
+Inspect all uploaded assets.
+
+Inspect the cinematic frame files.
+
+Understand the current framework.
+
+Do not immediately overwrite everything.
+
+SECOND:
+
+Plan the architecture.
+
+THIRD:
+
+Implement the cinematic intro.
+
+FOURTH:
+
+Implement the AI Core cinematic transition.
+
+FIFTH:
+
+Implement the main portfolio.
+
+SIXTH:
+
+Test the complete experience.
+
+==================================================
+FINAL TESTING
+==================================================
+
+After building:
+
+Run the development server.
+
+Check for:
+
+- compilation errors
+- runtime errors
+- broken imports
+- missing assets
+- incorrect frame ordering
+- animation glitches
+- scroll problems
+- mobile problems
+- navigation problems
+- broken links
+- layout overflow
+
+Fix all errors you find.
+
+Test:
+
+Desktop
+Mobile
+Scrolling DOWN
+Scrolling UP
+Fast scrolling
+Slow scrolling
+
+Make sure the cinematic animation does not freeze the browser.
+
+==================================================
+MOST IMPORTANT DESIGN RULE
+==================================================
+
+The website must NOT feel like:
+
+"normal portfolio + random animation."
+
+It should feel like:
+
+A CINEMATIC DEVELOPER EXPERIENCE
+
+The opening should tell a visual story.
+
+AIRPLANE
+→ SKY
+→ CLOUDS
+→ RAJ'S IDENTITY
+→ DETAILS RIGHT/LEFT
+→ AI CORE
+→ SYSTEM ONLINE
+→ DEVELOPER PORTFOLIO
+
+Then the visitor enters a clean professional developer portfolio.
+
+The AI Core MUST disappear after the intro.
+
+There must be NO separate AI Core page.
+
+There must be NO AI Core navigation item.
+
+There must be NO repeated AI Core later.
+
+Build the complete working website now.
+
+Do not only give me instructions or explain what I should code.
+
+Actually implement the website in this Replit project.
+
+After implementation, run and test it and fix the issues you find.

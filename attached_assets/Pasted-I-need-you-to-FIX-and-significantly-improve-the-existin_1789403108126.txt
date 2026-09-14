@@ -1,0 +1,558 @@
+I need you to FIX and significantly improve the existing cinematic portfolio intro.
+
+Do NOT rebuild the entire website from scratch.
+Inspect the current implementation first and fix the cinematic experience properly.
+
+I tested the site on a mobile phone and the current result has serious issues:
+
+1. The airplane-window animation becomes extremely zoomed/cropped.
+2. After scrolling for a while, the screen becomes completely black.
+3. The cinematic sequence does not transition smoothly into the next content.
+4. The frame composition is not responsive.
+5. The animation feels like it ends instead of naturally transforming into the next scene.
+6. The provided animation frames are not being displayed with the correct aspect ratio.
+
+FIX ALL OF THESE.
+
+==================================================
+1. FIX THE FRAME DISPLAY
+==================================================
+
+The animation frames must preserve their ORIGINAL aspect ratio.
+
+DO NOT aggressively use:
+
+object-fit: cover
+
+if that causes the airplane window to be cropped/zoomed.
+
+The entire important composition of each frame should remain visible.
+
+On desktop and mobile, calculate the correct scaling dynamically.
+
+The airplane window should look like the original image, not like an aggressively zoomed background.
+
+Use a responsive canvas or correctly sized image element if necessary.
+
+The animation should fill the viewport while preserving composition.
+
+If there are unavoidable aspect-ratio differences between the frame and device:
+
+- prioritize showing the complete important visual
+- use subtle background extension/blur rather than extreme cropping
+- never zoom so far that the scene loses its intended composition
+
+==================================================
+2. REMOVE THE BLACK SCREEN BUG
+==================================================
+
+This is CRITICAL.
+
+There must NEVER be a moment where scrolling causes a completely black/empty screen.
+
+Inspect the existing frame animation logic and determine why the black screen occurs.
+
+Possible causes to investigate:
+
+- frame index exceeding the available frame count
+- invalid image path
+- canvas being cleared without a valid frame being drawn
+- scroll progress reaching 1 before the next section is ready
+- incorrect canvas dimensions
+- image loading race condition
+- transparent/empty frame
+- incorrect frame mapping
+- CSS height/positioning problem
+
+Fix the root cause.
+
+Add safe bounds:
+
+frameIndex must ALWAYS remain between:
+
+0
+
+and
+
+frames.length - 1
+
+If a requested frame is not loaded yet:
+
+- display the closest available loaded frame
+- never clear the screen
+
+The last valid frame should remain visible until the next scene is ready.
+
+==================================================
+3. NO EMPTY GAP BETWEEN SCENES
+==================================================
+
+The cinematic sequence must connect continuously.
+
+Do NOT do:
+
+animation ends
+↓
+black screen
+↓
+About section
+
+Instead:
+
+AIRPLANE WINDOW
+↓
+SKY
+↓
+CLOUDS
+↓
+MY INFORMATION
+↓
+AI CORE
+↓
+MAIN PORTFOLIO
+
+The transition should always have something visually meaningful on screen.
+
+==================================================
+4. MAKE THE SCROLL EXPERIENCE LONGER AND SMOOTHER
+==================================================
+
+The current animation progresses too quickly / feels abrupt.
+
+Create a properly sized cinematic scroll container.
+
+The animation should have enough scroll distance for the user to appreciate the sequence.
+
+Use smooth interpolation between scroll progress and frame progress.
+
+For example:
+
+targetProgress = scrollProgress
+
+currentProgress gradually approaches targetProgress
+
+Use requestAnimationFrame.
+
+Avoid jitter.
+
+Avoid sudden frame jumps.
+
+Do NOT make the animation laggy.
+
+The user's scrolling should feel like controlling a cinematic camera.
+
+==================================================
+5. MOBILE-FIRST CINEMATIC EXPERIENCE
+==================================================
+
+The screenshot I provided is from a mobile device.
+
+The cinematic intro MUST be designed specifically for mobile as well as desktop.
+
+Detect viewport dimensions and adapt rendering.
+
+For mobile:
+
+- preserve the frame composition
+- don't excessively crop the airplane window
+- reduce unnecessary particle effects
+- reduce 3D complexity
+- keep text readable
+- maintain smooth scrolling
+- prevent horizontal overflow
+- prevent layout jumping
+- prevent huge zoom
+- keep the frame centered correctly
+
+Use CSS viewport units carefully.
+
+Do not rely on a desktop composition simply being scaled down.
+
+==================================================
+6. CINEMATIC TEXT SHOULD APPEAR DURING THE CLOUD SEQUENCE
+==================================================
+
+Do NOT wait until the animation ends to show my information.
+
+As the frames transition into the clouds, overlay my information progressively.
+
+Example timeline:
+
+EARLY:
+
+small HUD:
+
+RT / 001
+ALT 34,000 FT
+CAPTURE / 000
+
+Then:
+
+IDENTITY DETECTED
+
+Then:
+
+RAJ TIVARI
+
+SOFTWARE DEVELOPER
+
+Then as scrolling continues:
+
+RIGHT SIDE:
+
+PROFILE
+
+"Building modern software,
+AI-powered experiences
+and interactive web applications."
+
+Then:
+
+LEFT SIDE:
+
+MISSION
+
+"Learn.
+Build.
+Experiment.
+Create."
+
+Then:
+
+RIGHT SIDE:
+
+FOCUS
+
+WEB DEVELOPMENT
+AI
+SOFTWARE
+PROBLEM SOLVING
+
+Then:
+
+LEFT SIDE:
+
+OBJECTIVE
+
+"Building useful technology
+and growing as a developer."
+
+Use actual information from the project wherever available.
+
+Do not invent achievements.
+
+==================================================
+7. RIGHT / LEFT INFORMATION ANIMATION
+==================================================
+
+The information should alternate:
+
+RIGHT
+↓
+LEFT
+↓
+RIGHT
+↓
+LEFT
+
+Each block should:
+
+- fade in
+- slide slightly into position
+- remain readable
+- fade out naturally
+- transition into the next block
+
+Use subtle parallax.
+
+The text should feel integrated into the cloud environment.
+
+Do not use giant cards.
+
+Use futuristic HUD-style panels with:
+
+- thin borders
+- subtle glow
+- glass transparency
+- tiny technical labels
+
+==================================================
+8. CLOUD TRANSITION
+==================================================
+
+When the animation reaches the cloud portion:
+
+Make the cloud scene feel deeper.
+
+Add subtle:
+
+- parallax
+- atmospheric depth
+- slow particle movement
+- light rays
+- subtle fog
+- HUD scanning
+- depth-of-field style effects
+
+BUT:
+
+Do not cover the original frame with heavy effects.
+
+The provided animation remains the primary visual.
+
+==================================================
+9. AI CORE MUST BE PART OF THE INTRO ONLY
+==================================================
+
+At the END of the cinematic cloud sequence, transition into the AI Core.
+
+The AI Core is NOT a separate website section.
+
+It must only exist temporarily as part of the cinematic intro.
+
+Create a smooth transition:
+
+CLOUDS
+↓
+camera moves deeper
+↓
+clouds fade/transform
+↓
+futuristic glowing core appears
+↓
+AI CORE
+SYSTEM ONLINE
+↓
+PORTFOLIO SYSTEM INITIALIZED
+↓
+MAIN PORTFOLIO
+
+The AI Core should feel like the "system initialization" moment.
+
+==================================================
+10. AI CORE VISUAL
+==================================================
+
+Use the final design theme:
+
+DARK CYBERPUNK 3D DEVELOPER HUD
+
+Visual characteristics:
+
+- black/charcoal
+- restrained neon green
+- glowing central core
+- orbital rings
+- particles
+- subtle data streams
+- scanning lines
+- technical HUD
+- futuristic depth
+- minimal but premium
+
+Do not make it look like a gaming UI.
+
+Make it look like a professional futuristic developer system.
+
+The AI Core should exist only for a short cinematic moment.
+
+Then transition completely into the main portfolio.
+
+==================================================
+11. MAIN PORTFOLIO TRANSITION
+==================================================
+
+After:
+
+AI CORE
+SYSTEM ONLINE
+
+show:
+
+PORTFOLIO SYSTEM
+INITIALIZED
+
+Then smoothly transition into the actual portfolio.
+
+The main portfolio should use the same dark cyberpunk developer HUD aesthetic.
+
+Desktop layout:
+
+LEFT:
+navigation
+
+CENTER:
+content
+
+RIGHT:
+profile/live-data panel
+
+Navigation:
+
+01 HOME
+02 ABOUT
+03 PROJECTS
+04 SKILLS
+05 CERTIFICATES
+06 EXPERIENCE
+07 CONTACT
+
+NO AI CORE navigation item.
+
+==================================================
+12. PREVENT SCROLL DEAD-ZONES
+==================================================
+
+Inspect the entire page height.
+
+There must be no section where:
+
+- scrolling produces nothing
+- the screen becomes black
+- the animation disappears
+- the user gets stuck
+- the next section appears suddenly
+
+Every scroll range must have meaningful visual content.
+
+Make sure the cinematic section's height and animation progress are correctly synchronized.
+
+==================================================
+13. LOADING EXPERIENCE
+==================================================
+
+Add a lightweight cinematic loading state.
+
+For example:
+
+INITIALIZING VISUAL SYSTEM...
+
+LOADING FRAMES
+████████░░ 82%
+
+Once the minimum required frames are ready:
+
+ENTER EXPERIENCE
+
+Do not make the user wait unnecessarily.
+
+If some frames are still loading, continue gracefully.
+
+Never display a blank black screen while waiting.
+
+==================================================
+14. FRAME ERROR HANDLING
+==================================================
+
+Add robust handling for missing or failed images.
+
+If an image fails:
+
+- skip it
+- use nearest valid frame
+- continue animation
+
+Never allow one missing image to break the entire cinematic sequence.
+
+Preload intelligently.
+
+Do not create hundreds of simultaneous network requests if that hurts performance.
+
+==================================================
+15. PERFORMANCE
+==================================================
+
+Optimize the implementation.
+
+Avoid unnecessary React re-renders.
+
+Use:
+
+requestAnimationFrame
+
+efficient frame caching
+
+canvas where appropriate
+
+progressive loading
+
+device-aware effects
+
+reduced particle count on mobile
+
+Do not sacrifice the cinematic quality.
+
+==================================================
+16. FINAL TEST
+==================================================
+
+After making these changes, actually run the application.
+
+Test:
+
+DESKTOP:
+- Chrome
+- different viewport sizes
+
+MOBILE:
+- narrow phone
+- tall phone
+- landscape if possible
+
+Test:
+
+scroll slowly
+scroll quickly
+scroll down
+scroll back up
+start at top
+reload page
+jump through the page
+resize window
+
+Verify:
+
+NO BLACK SCREEN
+
+NO EXCESSIVE ZOOM
+
+NO FRAME CROPPING THAT DESTROYS THE COMPOSITION
+
+NO FLASHING
+
+NO EMPTY GAPS
+
+NO HORIZONTAL SCROLL
+
+NO BROKEN FRAME
+
+NO JUMPING BETWEEN SECTIONS
+
+SMOOTH AIRPLANE → SKY → CLOUDS → DETAILS → AI CORE → PORTFOLIO
+
+==================================================
+MOST IMPORTANT
+==================================================
+
+Do not just patch the black screen with a black background.
+
+Find and fix the actual frame rendering / scroll synchronization problem.
+
+Do not hide the issue.
+
+The final experience should feel like one continuous cinematic sequence.
+
+The visitor should be able to scroll naturally from:
+
+AIRPLANE WINDOW
+→ SKY
+→ CLOUDS
+→ RAJ TIVARI INFORMATION
+→ RIGHT / LEFT DETAILS
+→ AI CORE
+→ SYSTEM ONLINE
+→ MAIN PORTFOLIO
+
+with NO BLACK SCREEN at any point.
+
+Implement the fixes directly in the project and test the result before finishing.

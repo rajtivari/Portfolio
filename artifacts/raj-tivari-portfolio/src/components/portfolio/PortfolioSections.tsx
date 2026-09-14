@@ -140,8 +140,44 @@ function EmptyRecord({ title, body, testId }: { title: string; body: string; tes
 export function CertificatesSection() {
   return (
     <section id="certificates" className="relative px-6 py-28 md:px-16 lg:px-28" data-testid="section-certificates">
-      <SectionHeading index="05" kicker="CREDENTIALS / VERIFICATION" title="Certificates" detail="A clean place for credentials, kept honest until actual records are supplied." />
-      <EmptyRecord testId="empty-certificates" title="Certificate records will appear here." body="No certificate assets, issuers, dates, or credential IDs were included in the supplied material." />
+      <SectionHeading index="05" kicker="CREDENTIALS / VERIFICATION" title="Certificates" detail="Verified learning records, presented with the source asset and the details visible on it." />
+      <article className="glass-panel overflow-hidden" data-testid="certificate-c-programming">
+        <div className="grid gap-0 lg:grid-cols-[1.15fr_.85fr]">
+          <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#11100c] p-5 sm:p-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(224,169,58,.17),transparent_58%)]" />
+            <img
+              src="/certificates/c-programming-adhyaapana.png"
+              alt="Course completion certificate for Raj Tiwari K completing a C Programming course at Adhyaapana Centre of Excellence"
+              className="relative max-h-[420px] w-full object-contain shadow-[0_18px_70px_rgba(0,0,0,.42)]"
+              data-testid="img-certificate-c-programming"
+            />
+          </div>
+          <div className="flex flex-col justify-between border-t border-[#79b88d]/15 p-7 sm:p-10 lg:border-l lg:border-t-0">
+            <div>
+              <div className="mb-8 flex items-center justify-between gap-4">
+                <p className="font-mono text-[9px] tracking-[.24em] text-[#75e7a1]">CERTIFICATE / 01</p>
+                <span className="border border-[#c8a267]/40 px-2 py-1 font-mono text-[8px] tracking-[.16em] text-[#c8a267]">VERIFIED ASSET</span>
+              </div>
+              <h3 className="max-w-md text-3xl tracking-[-.05em] text-[#d9e9dc] sm:text-4xl">C Programming<br /><span className="text-[#75e7a1]">Course Completion</span></h3>
+              <dl className="mt-10 space-y-5 border-t border-[#79b88d]/15 pt-6 font-mono text-[10px] tracking-[.08em]">
+                <div className="flex items-start justify-between gap-6"><dt className="text-[#6f8477]">ISSUER</dt><dd className="max-w-[220px] text-right text-[#c8d9cb]">Adhyaapana Centre of Excellence</dd></div>
+                <div className="flex items-start justify-between gap-6"><dt className="text-[#6f8477]">COMPLETED</dt><dd className="text-right text-[#c8d9cb]">11 May 2024</dd></div>
+                <div className="flex items-start justify-between gap-6"><dt className="text-[#6f8477]">RECIPIENT</dt><dd className="text-right text-[#c8d9cb]">Raj Tiwari K</dd></div>
+                <div className="flex items-start justify-between gap-6"><dt className="text-[#6f8477]">CREDENTIAL ID</dt><dd className="text-right text-[#7f9786]">Not provided</dd></div>
+              </dl>
+            </div>
+            <a
+              href="/certificates/c-programming-adhyaapana.png"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-10 inline-flex w-fit items-center gap-3 border border-[#75e7a1]/45 px-4 py-3 font-mono text-[10px] tracking-[.16em] text-[#b7d4bd] transition-colors hover:border-[#75e7a1] hover:text-[#75e7a1]"
+              data-testid="link-view-certificate-c-programming"
+            >
+              VIEW CERTIFICATE <ArrowUpRight size={14} />
+            </a>
+          </div>
+        </div>
+      </article>
     </section>
   );
 }

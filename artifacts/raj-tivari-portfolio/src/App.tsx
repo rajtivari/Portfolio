@@ -13,7 +13,17 @@ import {
 
 const sectionIds = ['home', 'about', 'projects', 'skills', 'certificates', 'experience', 'contact'];
 
-function IntroOverlay({ progress, complete }: { progress: number; complete: boolean }) {
+function IntroOverlay({
+  progress,
+  complete,
+  ready,
+  loadingProgress,
+}: {
+  progress: number;
+  complete: boolean;
+  ready: boolean;
+  loadingProgress: number;
+}) {
   const phase = (min: number, max = 1) => !complete && progress >= min && progress < max;
   const panelClass = (visible: boolean, side: 'left' | 'right' = 'left') =>
     `absolute top-1/2 w-[min(86vw,370px)] -translate-y-1/2 transition-all duration-700 ${side === 'right' ? 'right-6 md:right-[12vw]' : 'left-6 md:left-[12vw]'} ${visible ? 'translate-y-[-50%] opacity-100' : 'pointer-events-none translate-y-[-42%] opacity-0'}`;
@@ -21,6 +31,17 @@ function IntroOverlay({ progress, complete }: { progress: number; complete: bool
   return (
     <div className="pointer-events-none absolute inset-0 z-20" aria-hidden={complete}>
       <div className="sticky top-0 h-[100dvh] overflow-hidden">
+        <div className={`absolute left-1/2 top-1/2 z-30 w-[min(84vw,320px)] -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ${ready ? 'pointer-events-none scale-95 opacity-0' : 'opacity-100'}`}>
+          <div className="border border-[#75e7a1]/30 bg-[#08110d]/75 p-5 shadow-[0_0_48px_rgba(117,231,161,.08)] backdrop-blur-md">
+            <p className="font-mono text-[9px] tracking-[.25em] text-[#75e7a1]">INITIALIZING VISUAL SYSTEM</p>
+            <p className="mt-3 font-mono text-[10px] tracking-[.15em] text-[#d5e7d8]">LOADING FRAMES / {Math.round(loadingProgress * 100)}%</p>
+            <div className="mt-4 h-px bg-[#75e7a1]/15">
+              <div className="h-px bg-[#75e7a1] transition-[width] duration-300" style={{ width: `${Math.max(8, loadingProgress * 100)}%` }} />
+            </div>
+            <p className="mt-3 font-mono text-[8px] tracking-[.12em] text-[#789381]">MINIMUM VISUAL BUFFER REQUIRED</p>
+          </div>
+        </div>
+
         <div className="absolute left-6 top-6 font-mono text-[9px] leading-5 tracking-[.16em] text-[#b9d8c0]/75 md:left-10 md:top-8">
           <p className="text-[#75e7a1]">RT / 001</p>
           <p>ALT 34,000 FT</p>
@@ -66,6 +87,12 @@ function IntroOverlay({ progress, complete }: { progress: number; complete: bool
           <p className="mt-2 font-mono text-[9px] tracking-[.18em] text-[#75e7a1]">PORTFOLIO INITIALIZATION</p>
         </div>
 
+        <div className={`absolute bottom-[18%] left-1/2 flex -translate-x-1/2 flex-col items-center text-center transition-all duration-700 ${complete || progress >= .94 ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'}`}>
+          <p className="font-mono text-[9px] tracking-[.28em] text-[#75e7a1]">PORTFOLIO SYSTEM</p>
+          <p className="mt-2 text-2xl tracking-[-.04em] text-[#eff8f0] md:text-3xl">INITIALIZED</p>
+          <p className="mt-3 font-mono text-[9px] tracking-[.16em] text-[#b0c9b7]">CONTINUE INTO THE MAIN INTERFACE</p>
+        </div>
+
         {!complete && (
           <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 font-mono text-[8px] tracking-[.25em] text-[#d5e7d8]/70">
             <span>CONTINUE DOWN</span><span className="h-8 w-px bg-gradient-to-b from-[#75e7a1] to-transparent" />
@@ -78,8 +105,11 @@ function IntroOverlay({ progress, complete }: { progress: number; complete: bool
 
 function CinematicIntro({ onComplete }: { onComplete: () => void }) {
   const [progress, setProgress] = useState(0);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [ready, setReady] = useState(false);
   const progressRef = useRef(0);
-  const [complete, setComplete] = useState(() => sessionStorage.getItem('raj-intro-complete') === '1');
+  const initialComplete = useRef(sessionStorage.getItem('raj-intro-complete') === '1');
+  const [complete, setComplete] = useState(() => initialComplete.current);
   const updateProgress = (next: number) => {
     if (Math.abs(next - progressRef.current) < 0.004) return;
     progressRef.current = next;
@@ -91,10 +121,22 @@ function CinematicIntro({ onComplete }: { onComplete: () => void }) {
     sessionStorage.setItem('raj-intro-complete', '1');
     onComplete();
   };
+  if (initialComplete.current) return null;
+
   return (
     <section className="relative" data-testid="intro-sequence">
-      <FrameCanvas onProgress={updateProgress} onComplete={completeIntro} />
-      <IntroOverlay progress={progress} complete={complete} />
+      <FrameCanvas
+        onProgress={updateProgress}
+        onLoadingProgress={setLoadingProgress}
+        onReady={() => setReady(true)}
+        onComplete={completeIntro}
+      />
+      <IntroOverlay
+        progress={progress}
+        complete={complete}
+        ready={ready}
+        loadingProgress={loadingProgress}
+      />
     </section>
   );
 }
