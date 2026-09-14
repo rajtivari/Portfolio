@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Raj Tivari Portfolio"
+description = "A cinematic developer portfolio that moves from an airplane-window sky journey into a professional software developer portfolio, using a scroll-controlled frame sequence and a restrained futuristic interface."
+version = "1.0.0"
+id = "artifacts/raj-tivari-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25585
+
+[services.development]
+run = "pnpm --filter @workspace/raj-tivari-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/raj-tivari-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/raj-tivari-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25585"
+BASE_PATH = "/"
