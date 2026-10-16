@@ -69,7 +69,7 @@ function IntroOverlay({
         <div className={panelClass(phase(.66, .79), 'right')}>
           <p className="mb-3 font-mono text-[10px] tracking-[.28em] text-[#75e7a1]">FOCUS / 04</p>
           <div className="space-y-2 font-mono text-sm tracking-[.1em] text-[#eff8f0]">
-            <p>WEB DEVELOPMENT</p><p>ARTIFICIAL INTELLIGENCE</p><p>SOFTWARE DEVELOPMENT</p><p>CREATIVE TECHNOLOGY</p>
+            <p>WEB DEVELOPMENT</p><p>DEVELOPER TOOLS</p><p>SOFTWARE DEVELOPMENT</p><p>CREATIVE TECHNOLOGY</p>
           </div>
         </div>
 
@@ -82,7 +82,7 @@ function IntroOverlay({
             <span className="absolute -right-12 top-8 font-mono text-[8px] tracking-[.2em] text-[#75e7a1]">SYNC / 98%</span>
             <span className="absolute -left-14 bottom-8 font-mono text-[8px] tracking-[.2em] text-[#75e7a1]">NODE / RT-01</span>
           </div>
-          <p className="font-mono text-[10px] tracking-[.42em] text-[#75e7a1]">AI CORE</p>
+          <p className="font-mono text-[10px] tracking-[.42em] text-[#75e7a1]">VISUAL TRANSITION</p>
           <p className="mt-4 font-mono text-sm tracking-[.38em] text-[#eff8f0]">SYSTEM ONLINE</p>
           <p className="mt-2 font-mono text-[9px] tracking-[.18em] text-[#75e7a1]">PORTFOLIO INITIALIZATION</p>
         </div>
@@ -183,7 +183,7 @@ function PortfolioPage() {
 function App() {
   useEffect(() => {
     document.title = 'Raj Tivari — Software Developer';
-    const description = 'Raj Tivari — Software Developer focused on web development, artificial intelligence, software development, and creative technology.';
+    const description = 'Raj Tivari — Software Developer focused on web development, developer tools, software development, and creative technology.';
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
   }, []);
   return <PortfolioPage />;
