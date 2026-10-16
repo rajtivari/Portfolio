@@ -33,7 +33,7 @@ export function HomeSection() {
         <div className="mt-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <p className="font-mono text-sm tracking-[.18em] text-[#c0d5c5]">SOFTWARE DEVELOPER</p>
-            <p className="mt-4 max-w-xl text-base leading-8 text-[#81988a]">Building thoughtful web experiences, exploring artificial intelligence, and turning complex ideas into useful software.</p>
+            <p className="mt-4 max-w-xl text-base leading-8 text-[#81988a]">Building thoughtful web experiences and turning complex ideas into useful software.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <button onClick={() => jump('projects')} className="group flex items-center gap-3 border border-[#75e7a1] bg-[#75e7a1] px-5 py-3 font-mono text-[10px] tracking-[.16em] text-[#07100b] transition-transform hover:-translate-y-1" data-testid="button-view-projects">
@@ -46,7 +46,7 @@ export function HomeSection() {
         </div>
         <div className="mt-20 grid max-w-2xl grid-cols-2 gap-8 border-t border-[#79b88d]/15 pt-5 font-mono text-[9px] leading-5 tracking-[.1em] text-[#557260] sm:grid-cols-4">
           <div><span className="block text-[#75e7a1]">01</span>WEB DEVELOPMENT</div>
-          <div><span className="block text-[#75e7a1]">02</span>ARTIFICIAL INTELLIGENCE</div>
+          <div><span className="block text-[#75e7a1]">02</span>DEVELOPER TOOLS</div>
           <div><span className="block text-[#75e7a1]">03</span>SOFTWARE DEVELOPMENT</div>
           <div><span className="block text-[#75e7a1]">04</span>CREATIVE TECHNOLOGY</div>
         </div>
@@ -64,7 +64,7 @@ export function AboutSection() {
           <div className="absolute right-0 top-0 h-24 w-24 border-l border-b border-[#75e7a1]/25" />
           <Terminal size={19} className="mb-10 text-[#75e7a1]" />
           <p className="max-w-2xl text-2xl leading-[1.3] tracking-[-.035em] text-[#d9e9dc] sm:text-4xl">“I’m Raj Tivari, a Software Developer focused on the space where useful software and creative technology meet.”</p>
-          <p className="mt-8 max-w-xl text-sm leading-7 text-[#81988a]">My current focus spans web development, artificial intelligence, software development, and creative technology. This portfolio is an evolving record — project, certificate, and experience details will be added as verified records become available.</p>
+          <p className="mt-8 max-w-xl text-sm leading-7 text-[#81988a]">My current focus spans web development, software development, developer tools, and creative technology. This portfolio is an evolving record — project, certificate, and experience details will be added as verified records become available.</p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
           {[
