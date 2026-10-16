@@ -106,7 +106,7 @@ export function ProjectsSection() {
 }
 
 export function SkillsSection() {
-  const focus = ['Web Development', 'Artificial Intelligence', 'Software Development', 'Creative Technology'];
+  const focus = ['Web Development', 'Developer Tools', 'Software Development', 'Creative Technology'];
   return (
     <section id="skills" className="relative px-6 py-28 md:px-16 lg:px-28" data-testid="section-skills">
       <SectionHeading index="04" kicker="CAPABILITY / DIRECTION" title="Skills" detail="A focused capability map based only on the areas Raj has confirmed." />
